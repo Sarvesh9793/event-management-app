@@ -15,34 +15,48 @@ import Cards from './MyComponents/Home/Cards.jsx';
 import Footer from './MyComponents/Footer/footer.jsx';
 import About from './MyComponents/About/about.jsx';
 import Contact from './MyComponents/Contact/contact.jsx';
+import sidebar  from './MyComponents/Dasbhboard/sidebar.jsx';
+import { BrowserRouter, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+// import Venue from './MyComponents/Venue/venue.jsx';
+import Dashboard  from './MyComponents/Dasbhboard/dashboard.jsx';
+import Venue from './MyComponents/Organizer/venue.jsx';
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from "./reducer"
+import { Provider } from 'react-redux';
 
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+ export const store = configureStore({
+  reducer: rootReducer
+})
 
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path='/' element={<App />}>
+//       <Route path='' element={<Home />} />
 
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<App />}>
-      <Route path='' element={<Home />} />
-      <Route path='cards' element={<Cards />} />
-      <Route path='about' element={<About />} />
-      <Route path='contact' element={<Contact />} />
-      <Route path='Organizer_login' element = {<Organizer_login/>} />
-      <Route path='User_login' element = {<User_login/>} />
-      <Route path='Organizer_reg' element = {<Organizer_reg/>} />
-      <Route path='User_reg' element = {<User_reg/>} />
-    </Route>
-  )
-)
+//       {/* <Route path='sidebar' element={<sidebar />} /> */}
+//       <Route path='Organizer_login' element = {<Organizer_login/>} />
+//       <Route path = 'venue' element={<Venue/>}/>
+//       <Route path='User_login' element = {<User_login/>} />
+      
+//       <Route path='User_reg' element = {<User_reg/>} />
+//       <Route path='Organizer_reg' element = {<Organizer_reg/>} />
+//     </Route>
+//   )
+// )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+     <Provider store={store}>
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
+     </Provider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+      {/* <Route path='venue' element={<Venue />} /> */}
+      {/* <Route path='venue' element={<Ven} */}
+      {/* <Route path='about' element={<About />} /> */}
+      {/* <Route path='contact' element={<Contact />} /> */}

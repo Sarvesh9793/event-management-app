@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import React, { useState } from 'react'
+import contactbg from '../Images/contactbg.jpg'
 const contact = () => {
 //   const [formData, setFormData] = useState({
 //     name: '',
@@ -19,11 +19,17 @@ const contact = () => {
 //   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl justify-center font-bold mb-4">Contact Us</h1>
-      <form  className="w-full max-w-lg mx-auto">
-        <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-700">Name</label>
+    <>
+    <div className='flex '>
+      <div className='flex-1'>
+        <img src={contactbg} alt="" />
+      </div>
+        <h1 className='text-black text-3xl mt-[1rem]  font-bold'>Get in touch</h1>
+      <div className='flex-1'>
+
+        <form action=" " className='p-[2rem] rounded-lg mt-[6rem] mb-[3rem] mr-[4rem] bg-gray-800'>
+        <div className="mb-4 ">
+          <label htmlFor="name" className="block text-white">Name</label>
           <input
             type="text"
             id="name"
@@ -36,7 +42,7 @@ const contact = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700">Email</label>
+          <label htmlFor="email" className="block text-white">Email</label>
           <input
             type="email"
             id="email"
@@ -49,7 +55,7 @@ const contact = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="message" className="block text-gray-700">Message</label>
+          <label htmlFor="message" className="block text-white">Message</label>
           <textarea
             id="message"
             name="message"
@@ -67,8 +73,10 @@ const contact = () => {
         >
           Submit
         </button>
-      </form>
+        </form>
+      </div>
     </div>
+    </>
   );
 };
 

@@ -14,3 +14,11 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.custom-background-user {
+  background-image: url('C:\Users\Ms\Desktop\Event Management System\Frontend\public\event1.jpg'); 
+  background-size: cover;  
+} 
+.custom-background-org {
+ background-image: url('C:\Users\Ms\Desktop\Event Management System\Frontend\public\event3.jpg'); 
+background-size: cover ;
+}
